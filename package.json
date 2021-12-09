@@ -1,0 +1,17 @@
+{
+  "name": "coffee-db",
+  "version": "1.0.0",
+  "description": "Draft frontend for Project Database.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ana Teruya",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "forever": "^4.0.1",
+    "mysql": "^2.18.1"
+  }
+}

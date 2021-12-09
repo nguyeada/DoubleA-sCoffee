@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>Double A Coffee Database</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <nav class="row navbar navbar-expand-sm py-5">
+                <div class="container-fluid">
+                    <h3 class="navbar-text">Double A Coffee Company</h3>
+                    <ul class="nav nav-pills justify-content-end">                
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/drinks">Drinks</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/locations">Locations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/customers">Customers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/orders">Orders</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/drink-orders">Drink Tracker: Orders</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/drink-locations">Drink Tracker: Locations</a></li>
+                    </ul>
+                </div>  
+            </nav>
+            <div class="row container-fluid m-0 pt-3 pb-3 px-5">
+                <h4 class="text-center">Drink Database</h4>
+            </div>
+            <div class="row container-fluid m-0 pt-3">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <td>Drink ID</td>
+                        <th>Name</th>
+                        <th>Cost</th>
+                        <th>Edit Drink</th>
+                        <th>Delete Drink</th>
+                    </thead>
+
+                    <tbody>
+                        {{#each drinks}}
+                        <tr>
+                            <td>{{drink_id}}</td>
+                            <td>{{drink_name}}</td>
+                            <td>{{cost}}</td>
+                            <td><a type="button" class="btn btn-outline-primary" href="/drinks/{{drink_id}}">Edit</a></td>
+                            <td><button type="button" class="btn btn-outline-primary" onclick="deleteDrink({{drink_id}})">Delete</button></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="input-group m-0 mt-2 px-5">
+                <label for="new-drink" class="form-label">Add a drink to the menu:</label>
+            </div>
+            <form class="input-group m-0 mt-2 mb-5 px-5" id="adddrink" action="/drinks" method="post">
+                <input type="text" name="drink_name" class="form-control" placeholder="Enter drink name"><br>
+                <input type="number" name="cost" step="any" class="form-control" placeholder="Enter cost"><br>
+                <input class="btn btn-outline-primary" type="submit" value="Add">
+            </form>
+        </div>
+    </body>
+</html>

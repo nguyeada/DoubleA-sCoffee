@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>Double A Coffee Database</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <nav class="row navbar navbar-expand-sm py-5">
+                <div class="container-fluid">
+                    <h3 class="navbar-text">Double A Coffee Company</h3>
+                    <ul class="nav nav-pills justify-content-end">                
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/drinks">Drinks</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/locations">Locations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/customers">Customers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/orders">Orders</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/drink-orders">Drink Tracker: Orders</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/drink-locations">Drink Tracker: Locations</a></li>
+                    </ul>
+                </div>  
+            </nav>
+            <div class="row container-fluid m-0 pt-3 pb-3 px-5">
+                <h4 class="text-center">Drink-by-Location Database</h4>
+            </div>
+            <div class="input-group m-0 mt-2 px-5">
+                <label for="filter-drink-location" class="form-label">Filter by drink to view current location availability:</label>
+            </div>
+            <form class="input-group m-0 mt-2 px-5 mb-3" id="filter-drinks" action="" method="">
+                <select class="form-select form-select-sm" id="drinklocation_filter" name="drink_id">
+                    <option selected>Choose drink to filter locations</option>
+                    {{#each drinks}}
+                    <option value="{{d_id}}">{{d_id}} - {{drink_name}}</option>
+                    {{/each}}
+                </select><br>
+                <input class="btn btn-outline-primary" type="button" value="filter" onclick="filterLocationsByDrink()">
+            </form>
+            <div class="row container-fluid m-0 pt-3">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <th>Drink ID</th>
+                        <th>Drink Name</th>
+                        <th>Location ID</th>
+                        <th>Location Name</th>
+                    </thead>
+                    <tbody>
+                        {{#each drink_locations}}
+                        <tr>
+                            <td>{{drink_id}}</td>
+                            <td>{{drink_name}}</td>
+                            <td>{{location_id}}</td>
+                            <td>{{full_location}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="input-group m-0 mt-2 px-5">
+                <label for="new-drink-location" class="form-label">Add a new drink location:</label>
+            </div>
+            <form class="input-group m-0 mt-2 mb-5 px-5" id="adddrinklocation" action="/drink-locations" method="post">
+                <select class="form-select form-select-sm" name="drink_id">
+                    <option selected>Choose drink</option>
+                    {{#each drinks}}
+                    <option value="{{d_id}}">{{d_id}} - {{drink_name}}</option>
+                    {{/each}}
+                </select><br>
+                <select class="form-select form-select-sm" name="location_id">
+                    <option selected>Choose location</option>
+                    {{#each locations}}
+                    <option value="{{l_id}}">{{l_id}} - {{city_name}}, {{state_name}}</option>
+                    {{/each}}
+                </select><br>
+                <input class="btn btn-outline-primary" type="submit" value="Add">
+            </form>
+        </div>
+    </body>
+</html>

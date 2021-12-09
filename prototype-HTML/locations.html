@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Double A Coffee Database</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <nav class="row navbar navbar-expand-sm py-5">
+                <div class="container-fluid">
+                    <h3 class="navbar-text">Double A Coffee Company</h3>
+                    <ul class="nav nav-pills justify-content-end">                
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="drinks.html">Drinks</a></li>
+                        <li class="nav-item"><a class="nav-link" href="orders.html">Orders</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#">Locations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="customers.html">Customers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="drink-orders.html">Drink Tracker: Orders</a></li>
+                        <li class="nav-item"><a class="nav-link" href="drink-locations.html">Drink Tracker: Locations</a></li>
+                    </ul>
+                </div>  
+            </nav>
+            <div class="row container-fluid m-0 pt-3 pb-3 px-5">
+                <h4 class="text-center">Location Database</h4>
+            </div>
+            <div class="row container-fluid m-0 pt-3">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>Location ID</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Edit Location Info</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>5050</td>
+                            <td>Seattle</td>
+                            <td>Washington</td>
+                            <td><button type="button" class="btn btn-outline-primary">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>8000</td>
+                            <td>Las Vegas</td>
+                            <td>Nevada</td>
+                            <td><button type="button" class="btn btn-outline-primary">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>1234</td>
+                            <td>San Francisco</td>
+                            <td>California</td>
+                            <td><button type="button" class="btn btn-outline-primary">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>9999</td>
+                            <td>Boston</td>
+                            <td>Massachusetts</td>
+                            <td><button type="button" class="btn btn-outline-primary">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>9876</td>
+                            <td>New York</td>
+                            <td>New York</td>
+                            <td><button type="button" class="btn btn-outline-primary">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>2222</td>
+                            <td>Houston</td>
+                            <td>Texas</td>
+                            <td><button type="button" class="btn btn-outline-primary">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row container-fluid m-0 pt-4">
+                
+            </div>
+            <div class="input-group m-0 mt-2 px-5">
+                <label for="new-location" class="form-label">Add a new store location:</label>
+            </div>
+            <div class="input-group m-0 mt-2 px-5">
+                <input type="text" class="form-control" placeholder="Enter city name">
+                <input type="text" class="form-control" placeholder="Enter state name">
+                <button class="btn btn-outline-primary" type="submit">Add</button>
+            </div>
+            <div class="input-group m-0 mt-3 px-5">
+                <label for="remove-order" class="form-label">Remove a store location:</label>
+            </div>
+            <div class="input-group m-0 mt-2 px-5 pb-5">
+                <input class="form-control" list="stores" name="stores" id="store-location">
+                <datalist id="stores">
+                    <option value="5050">
+                    <option value="8000">
+                    <option value="1234">
+                    <option value="9999">
+                    <option value="9876">
+                    <option value="2222">
+                </datalist>
+                <button class="btn btn-outline-primary" type="submit">Remove</button>
+            </div>
+        </div>  
+    </body>
+</html>

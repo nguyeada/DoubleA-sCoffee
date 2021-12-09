@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Double A Coffee Database</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <nav class="row navbar navbar-expand-sm py-5">
+                <div class="container-fluid">
+                    <h3 class="navbar-text">Double A Coffee Company</h3>
+                    <ul class="nav nav-pills justify-content-end">                
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="drinks.html">Drinks</a></li>
+                        <li class="nav-item"><a class="nav-link" href="orders.html">Orders</a></li>
+                        <li class="nav-item"><a class="nav-link" href="locations.html">Locations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="customers.html">Customers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="drink-orders.html">Drink Tracker: Orders</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#">Drink Tracker: Locations</a></li>
+                    </ul>
+                </div>  
+            </nav>
+            <div class="row container-fluid m-0 pt-3 pb-3 px-5">
+                <h4 class="text-center">Drink-by-Location Database</h4>
+            </div>
+            <div class="input-group m-0 mt-3 px-4">
+                <label for="choose-location" class="form-label">Choose a location ID:</label>
+            </div>
+            <div class="input-group m-0 mt-2 px-4 pb-3">
+                <input class="form-control" list="drink-location" name="drink-location" id="dl-list">
+                <datalist id="drink-location">
+                    <option value="1234">
+                    <option value="2222">
+                    <option value="5050">
+                    <option value="8000">
+                    <option value="9999">
+                </datalist>
+                <button class="btn btn-outline-primary" type="submit">Select</button>
+            </div>
+            <div class="row container-fluid m-0 pt-3">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>Location ID</th>
+                            <th>Drink ID</th>
+                            <th>Quantity Sold</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1234</td>
+                            <td>003</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>1234</td>
+                            <td>004</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>5050</td>
+                            <td>001</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>5050</td>
+                            <td>002</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>5050</td>
+                            <td>003</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>9999</td>
+                            <td>001</td>
+                            <td>3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>  
+    </body>
+</html>
